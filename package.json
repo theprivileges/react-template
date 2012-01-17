@@ -1,10 +1,22 @@
 {
-    "name": "application-name"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "express": "2.5.5"
-    , "stylus": ">= 0.0.1"
-    , "jade": ">= 0.0.1"
-  }
+  "name": "wickeddeveloper.com",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "2.5.5",
+    "stylus": ">= 0.0.1",
+    "jade": ">= 0.0.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "author": "Luiz Lopes <http://twitter.com/theprivileges>",
+  "description": "My personal website written for node.js, using jade and stylus",
+  "homepage": "http://wickeddeveloper.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/theprivileges/wickeddeveloper.com.git"
+  },
+  "main": "app"
 }
