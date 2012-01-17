@@ -1,12 +1,16 @@
 
 /**
- * Module dependencies.
+ * Wickeddeveloper.com
+ *
+ * @author Luiz Lopes <http://twitter.com/theprivileges>
  */
 
-var express = require('express')
-  , routes = require('./routes')
+var express, routes, app; 
 
-var app = module.exports = express.createServer();
+express = require('express');
+routes = require('./routes');
+
+app = module.exports = express.createServer();
 
 // Configuration
 
