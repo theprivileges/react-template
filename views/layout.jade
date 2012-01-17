@@ -64,17 +64,17 @@ html(lang='en_US')
       
       $(document).ready(function (){
         $(".tweet").tweet({
-          username: "theprivileges",
-        join_text: "auto",
-        count: 3,
-        loading_text: "loading activity..."
+          username    : "theprivileges",
+          join_text   : "auto",
+          count       : 3,
+          loading_text: "loading activity..."
         });
         // letting the user know he clicked on a button
         $("a.button").live("click", function (){
           $(this).text(function (index, text){
-            // in case the user opend the link in a tab, this will make sure the site goes back to normal
-            window.setTimeout(resetLinks, 2000, this, text);
-            return "Loading\\u2026";
+              // in case the user opend the link in a tab, this will make sure the site goes back to normal
+              window.setTimeout(resetLinks, 2000, this, text);
+              return "Loading\\u2026";
             }
           );
         });
