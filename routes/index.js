@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index');
+  res.render('index', { title : 'Luiz Lopes - Web Application Developer' });
 };
