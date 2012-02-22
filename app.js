@@ -14,7 +14,8 @@ app = module.exports = express.createServer();
 
 // Configuration
 
-app.configure(function(){
+app.configure(function (){
+  "use strict";
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.bodyParser());
@@ -23,12 +24,14 @@ app.configure(function(){
   app.use(app.router);
 });
 
-app.configure('development', function(){
+app.configure('development', function (){
+  "use strict";
   app.use(express.static(__dirname + '/public'));
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
 });
 
-app.configure('production', function(){
+app.configure('production', function (){
+  "use strict";
   var oneMonth;
   oneMonth = 2592000;
   app.use(express.static(__dirname + '/public', { maxAge: oneMonth }));

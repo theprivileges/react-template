@@ -63,6 +63,7 @@ html(lang='en_US')
       var resetLinks;
       
       $(document).ready(function (){
+        "use strict";
         $(".tweet").tweet({
           username    : "theprivileges",
           join_text   : "auto",
@@ -71,6 +72,7 @@ html(lang='en_US')
         });
         // letting the user know he clicked on a button
         $("a.button").live("click", function (){
+          "use strict";
           $(this).text(function (index, text){
               // in case the user opend the link in a tab, this will make sure the site goes back to normal
               window.setTimeout(resetLinks, 2000, this, text);
@@ -81,5 +83,6 @@ html(lang='en_US')
       });
       // reset the link to original text
       resetLinks = function (element, text) {
+        "use strict";
         return $(element).text(text);
       };
