@@ -21,14 +21,17 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(require('stylus').middleware({ src: __dirname + '/public', compress: true }));
   app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
 });
 
 app.configure('development', function(){
+  app.use(express.static(__dirname + '/public'));
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
 });
 
 app.configure('production', function(){
+  var oneMonth;
+  oneMonth = 2592000;
+  app.use(express.static(__dirname + '/public', { maxAge: oneMonth }));
   app.use(express.errorHandler()); 
 });
 
