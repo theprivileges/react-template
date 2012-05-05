@@ -2,40 +2,44 @@
 #header
   #header_text.row.row_12
     h1 Luiz Lopes
-    h2(title='Someone who develops Web Applications') Web Application Developer
-#body
+    h2.role(title='Someone who develops Web Applications') Web Application Developer
+#body(itemscope, itemtype="http://schema.org/Person")
   #main.row.row_4_8
     #main_left.column.grid_8.bio
       h3 Oi!
       p
-        | I'm
-        span.fn Luiz Lopes
-        | , a web application developer living in
-        span#home.adr
-          span.locality Orlando, Florida
+        | I'm 
+        span.fn(itemprop="name") Luiz Lopes
+        | , a 
+        span(itemprop="jobTitle") web application developer 
+        | living in 
+        span#home.adr.locality(itemprop="address", itemscope, itemtype="http://schema.org/PostalAddress")
+            span(itemprop="addressLocality") Philipsburg
+            |, 
+            span(itemprop="addressRegion", title="Montana") MT
         | .
-        |  I build web applications powered by
+        |  I build web applications powered by 
         a(href='http://php.net', rel='nofollow', title='Hypertext Preprocessor') PHP
-        | ,  and
+        | , and 
         a(href='https://developer.mozilla.org/en/JavaScript', rel='nofollow', title='The scripting language of the web') Javascript
-        | ,  using libraries like
+        | ,  using libraries like 
         a(href='http://jquery.com', rel='nofollow', title='fast and concise JavaScript Library') jQuery
-        | ;  and
+        | ;  and 
         a(href='http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller', rel='nofollow', title='Model-View-Controller') MVC Frameworks
-        |  such as
+        |  such as 
         a(href='http://cakephp.org/', title='rapidly develop robust web applications', rel='nofollow') CakePHP
-        |  and
+        |  and 
         a(href='http://framework.zend.com/', title='Zend Framework', rel='nofollow') ZF
         | .
-        |  I work at
-        a.org.url(href='http://www.avectralabs.com', title='AvectraLabs', rel='nofollow') Avectra, Inc.
-        |  in the
-        em Labs
+        |  I work at 
+        a.org.url(href='http://votesmart.org', title='The Voter\'s Self Defense', rel='nofollow', itemprop="worksFor") Project Vote Smart.
+        |  in the 
+        em(itemprop="affiliation") Information Technology
         |  department.
         br
-        | You can usually find me at the
-        a.group(href='http://www.meetup.com/orlandophp/', title='Orlando PHP MeetUp') Orlando PHP User Group
-        |  meetings, or away from the computer swimming, biking or running around Orlando.
+        | You can usually find me at the 
+        a.group(href='http://www.flickr.com/photos/theprivileges/sets/72157629460393932/', title='PVS Headquarters') Great Divide Ranch
+        | , or away from the computer hiking, or running around Montana.
     
     #main_right.column.grid_4
       h3 Latest Activity
@@ -58,4 +62,4 @@
     a.url(href='http://wickeddeveloper.com', rel='me', title='Web Application Developer') Luiz Lopes
     |  © 2012
     | -
-    a.email(href='mailto:luizlopes@gmail.com', title='Contact me via Email') Contact me
+    a.email(href='mailto:luizlopes@gmail.com', title='Contact me via Email', itemprop="email") Contact me
