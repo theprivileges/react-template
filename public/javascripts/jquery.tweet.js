@@ -100,13 +100,14 @@
     }
 
     function build_url() {
+      var proto = ('https:' == document.location.protocol ? 'https:' : 'http:');
       if (s.list) {
-        return 'https://api.twitter.com/1.1/'+s.username[0]+'/lists/'+s.list+'/statuses.json?per_page='+s.count+'&callback=?';
+        return proto+"//api.twitter.com/1/"+s.username[0]+"/lists/"+s.list+"/statuses.json?per_page="+s.count+"&callback=?";
       } else if (s.query == null && s.username.length == 1) {
-        return 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name='+s.username[0]+'&count='+s.count+'&include_rts=false';
+        return proto+'//api.twitter.com/1/statuses/user_timeline.json?screen_name='+s.username[0]+'&count='+s.count+'&include_rts=0';
       } else {
         var query = (s.query || 'from:'+s.username.join(' OR from:'));
-        return 'https://search.twitter.com/search.json?&q='+encodeURIComponent(query)+'&rpp='+s.count+'&callback=?';
+        return proto+'//search.twitter.com/search.json?&q='+encodeURIComponent(query)+'&rpp='+s.count+'&callback=?';
       }
     }
 
