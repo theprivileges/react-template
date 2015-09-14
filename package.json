@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "engines": {
-    "node": "*"
+    "node": "~0.10.3"
   },
   "author": "Luiz Lopes <http://twitter.com/theprivileges>",
   "description": "My personal website written for node.js, using jade and stylus",
