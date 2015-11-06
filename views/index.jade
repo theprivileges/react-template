@@ -3,7 +3,7 @@
   #header_text.row.row_12
     h1 Luiz Lopes
     h2.role(title='Someone who develops Web Applications') Web Application Developer
-#body(itemscope, itemtype="http://schema.org/Person")
+#body
   #main.row.row_4_8
     #main_left.column.grid_8.bio
       h3 Oi!
@@ -41,7 +41,7 @@
         |  with the details.
 
     #main_right.column.grid_4
-      a.twitter-timeline( data-dnt='true', href="https://twitter.com/theprivileges", data-widget-id='287629206614056960', width='278')
+      a.twitter-timeline( data-dnt='true', href="https://twitter.com/theprivileges", data-widget-id='287629206614056960', width='278', itemprop='sameAs')
       script(type='text/javascript').
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
@@ -49,15 +49,15 @@
 #footer
   #footer_inner.row.row_12
     p.right
-      a.blue.button.url(href='http://blog.wickeddeveloper.com/?utm_source=wickeddeveloper&amp;utm_medium=link&amp;utm_content=blog&amp;utm_campaign=profiles', title='My random ramblings', rel='blog') Blog
+      a.blue.button.url(href='https://medium.com/@theprivileges', title='My random ramblings', rel='blog') Blog
       | 
-      a.orange.button.url(href='http://www.linkedin.com/in/luizlopes/', rel='me', title='Find me on LinkedIn') LinkedIn
+      a.orange.button.url(href='http://www.linkedin.com/in/luizlopes/', rel='me', title='Find me on LinkedIn', itemprop='sameAs') LinkedIn
       | 
-      a.red.button.url.uid(href='https://launchpad.net/~luizlopes/', rel='me', title='Launchpad Profile') Launchpad
+      a.red.button.url.uid(href='https://launchpad.net/~luizlopes/', rel='me', title='Launchpad Profile', itemprop='sameAs') Launchpad
       | 
-      a.black.button.url(href='https://github.com/theprivileges/', rel='me', title='github repository') GitHub
+      a.black.button.url(href='https://github.com/theprivileges/', rel='me', title='github repository', itemprop='sameAs') GitHub
       | 
-      a.green.button.url(href='http://stackoverflow.com/users/403434/theprivileges', rel='me', title='Stackoverflow Profile') Stackoverflow
+      a.green.button.url(href='http://stackoverflow.com/users/403434/theprivileges', rel='me', title='Stackoverflow Profile', itemprop='sameAs') Stackoverflow
 #copyright.row.row_12
   p
     a.url(href='http://wickeddeveloper.com/?utm_source=wickeddeveloper&amp;utm_medium=link&amp;utm_content=luizlopes&amp;utm_campaign=profiles', rel='me', title='Web Application Developer', itemprop='url') Luiz Lopes
