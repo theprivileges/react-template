@@ -1,0 +1,6 @@
+Sitemap: http://wickeddeveloper.com/sitemap.xml
+
+User-agent: *
+Disallow: /images/
+Disallow: /stylesheets/
+Disallow: /javascripts/
