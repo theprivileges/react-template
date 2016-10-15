@@ -1,9 +1,9 @@
 {
   "name": "wickeddeveloper.com",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
-  "engine" : {
-      "node": "~4.4.4"
+  "engine": {
+    "node": "~4.4.4"
   },
   "scripts": {
     "start": "node ./bin/www"
