@@ -1,6 +1,6 @@
 {
   "name": "wickeddeveloper.com",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": true,
   "engine": {
     "node": "~4.4.4"
