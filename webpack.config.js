@@ -1,4 +1,13 @@
 module.exports = {
+    entry: {
+        main: './src/index.js',
+    },
+    output: {
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
+        paht: './dist',
+        publicPath: 'dist/'
+    },
     module: {
         rules: [
             {
