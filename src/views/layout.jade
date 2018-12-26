@@ -65,25 +65,3 @@ html(lang='en_US', prefix='og: http://ogp.me/ns#')
 
         ga('create', 'UA-360787-4', 'auto');
         ga('send', 'pageview');
-
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', type='text/javascript')
-
-  script(type='text/javascript').
-      var resetLinks;
-
-      resetLinks = function (element, text) {
-        return $(element).text(text);
-      };
-
-      $(document).ready(function (){
-        'use strict';
-        // letting the user know he clicked on a button
-        $('a.button').live('click', function (){
-          $(this).text(function (index, text){
-              // in case the user opend the link in a tab, this will make sure the site goes back to normal
-              window.setTimeout(resetLinks, 2000, this, text);
-              return 'Loading...';
-            }
-          );
-        });
-      });
