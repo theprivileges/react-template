@@ -6,7 +6,8 @@
     "node": "^10.0.0"
   },
   "scripts": {
-    "start": "echo 'none'"
+    "start": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "author": "Luiz Lopes <http://twitter.com/theprivileges>",
   "description": "My personal website",
