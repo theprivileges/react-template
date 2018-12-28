@@ -1,12 +1,13 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+
 module.exports = {
-    entry: {
-        main: './src/index.js',
-    },
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
-        paht: './dist',
-        publicPath: 'dist/'
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '',
     },
     module: {
         rules: [
@@ -14,9 +15,30 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
+                    loader: 'babel-loader'
+                }
+            },
+            {
+                test: /\.css$/,
+                use:[
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.jade$/,
+                use: { 
+                    loader: 'pug-loader'
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.jade',
+        }),
+        new ScriptExtHtmlWebpackPlugin({
+            defaultAttribute: 'defer'
+        })
+    ]
 };
