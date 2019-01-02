@@ -12,50 +12,52 @@ block content
                 #main_left.column.grid_8.bio
                     h3 Oi!
                     p
-                    | I'm 
+                    | I'm
                     span.fn(itemprop="name") Luiz Lopes
-                    | , a 
-                    span(itemprop="jobTitle") web application developer 
-                    | living in 
+                    | , a
+                    span(itemprop="jobTitle") web application developer
+                    | living in
                     span#home.adr.locality(itemprop="address", itemscope, itemtype="http://schema.org/PostalAddress")
                     span(itemprop="addressLocality") Missoula
-                    | , 
+                    | ,
                     span(itemprop="addressRegion", title="MT") Montana
                     | .
-                    |  I build web applications powered by 
+                    |  I build web applications powered by
                     a(href='https://developer.mozilla.org/en/JavaScript', rel='nofollow', title='The scripting language of the web') Javascript
-                    | ,  using tools such as 
+                    | ,  using tools such as
                     a(href='http://knockoutjs.com/', rel='nofollow', title='Model-View-View Model JavaScript Library') Knockout.js
-                    | ,  
+                    | ,
                     a(href='http://jquery.com', rel='nofollow', title='fast and concise JavaScript Library') jQuery
-                    | ,  
+                    | ,
                     a(href='http://nodejs.org/', rel='nofollow', title='a JavaScript runtime built on Chrome\'s V8 JavaScript engine') Node.js
-                    | , and 
+                    | , and
                     a(href='http://php.net', rel='nofollow', title='Hypertext Preprocessor') PHP
                     |.
                     p
-                    | If I am not on the computer, you can usually find me around doing a number of outdoor activities, or practicing 
+                    | If I am not on the computer, you can usually find me around doing a number of outdoor activities, or practicing
                     a(href='https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu', rel='nofollow', title='Brazilian Jiu-Jitsu') BJJ
                     |.
                     p
-                    | If you have a cool project, and need web development help, I am currently available for new projects. Simply 
+                    | If you have a cool project, and need web development help, I am currently available for new projects. Simply
                     a.email(href='mailto:luiz@wickeddeveloper.com', title='Work with me.') e-mail me
                     |  with the details.
                 #main_right.column.grid_4
-                    a.twitter-timeline( data-dnt='true', href="https://twitter.com/theprivileges", data-widget-id='287629206614056960', width='278', itemprop='sameAs')
-                    script(type='text/javascript').
-                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+                    a.twitter-timeline( data-dnt='true', item-prop='sameAs',
+                    data-width='278',
+                    data-tweet-limit='3',
+                    href='https://twitter.com/theprivileges?ref_src=twsrc%5Etfw').Tweets by theprivileges
+                    script(async, src='https://platform.twitter.com/widgets.js', charset='utf-8')
             #footer
                 #footer_inner.row.row_12
                     p.right
                         a.blue.button.url(href='https://medium.com/@theprivileges', title='My random ramblings', rel='blog') Blog
-                        | 
+                        |
                         a.orange.button.url(href='http://www.linkedin.com/in/luizlopes/', rel='me', title='Find me on LinkedIn', itemprop='sameAs') LinkedIn
-                        | 
+                        |
                         a.red.button.url.uid(href='https://launchpad.net/~luizlopes/', rel='me', title='Launchpad Profile', itemprop='sameAs') Launchpad
-                        | 
+                        |
                         a.black.button.url(href='https://github.com/theprivileges/', rel='me', title='github repository', itemprop='sameAs') GitHub
-                        | 
+                        |
                         a.green.button.url(href='http://stackoverflow.com/users/403434/theprivileges', rel='me', title='Stackoverflow Profile', itemprop='sameAs') Stackoverflow
         #copyright.row.row_12
             p
