@@ -5,7 +5,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 module.exports = {
     output: {
         filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js',
+        chunkFilename: '[name].chunk.js',
         path: path.resolve(__dirname, 'docs'),
         publicPath: '',
     },
@@ -27,7 +27,7 @@ module.exports = {
             },
             {
                 test: /\.jade$/,
-                use: { 
+                use: {
                     loader: 'pug-loader'
                 }
             }
@@ -40,5 +40,8 @@ module.exports = {
         new ScriptExtHtmlWebpackPlugin({
             defaultAttribute: 'defer'
         })
-    ]
+    ],
+    optimization: {
+      runtimeChunk: 'single',
+    }
 };
