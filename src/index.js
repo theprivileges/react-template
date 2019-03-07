@@ -1,4 +1,5 @@
 'use strict';
+import 'babel-polyfill';
 
 import './styles/index.css';
 

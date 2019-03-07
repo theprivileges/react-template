@@ -14,7 +14,9 @@
     "author": "Luiz Lopes <http://twitter.com/theprivileges>",
     "description": "My personal website",
     "homepage": "http://wickeddeveloper.com",
-    "dependencies": {},
+    "dependencies": {
+        "babel-polyfill": "^6.26.0"
+    },
     "repository": {
         "type": "git",
         "url": "git://github.com/theprivileges/wickeddeveloper.com.git"
