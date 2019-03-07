@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     output: {
@@ -34,6 +35,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin({}),
         new HtmlWebpackPlugin({
             template: './src/index.jade',
         }),
