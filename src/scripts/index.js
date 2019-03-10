@@ -1,9 +1,8 @@
 'use strict';
 import 'babel-polyfill';
 
-import './styles/index.css';
-
-const resetLinks = (element, text) => element.innerText = text;
+import '../styles/index.css';
+import resetLinks from './resetLinks';
 
 const textCallback = (element, text) => {
     window.setTimeout(resetLinks, 2000, element, text);
