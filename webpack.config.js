@@ -2,13 +2,16 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+    entry: {
+      index: './src/scripts/index.js'
+    },
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[name].chunk.js',
         path: path.resolve(__dirname, 'docs'),
-        publicPath: '',
     },
     module: {
         rules: [
@@ -36,6 +39,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin({}),
+        new CopyPlugin(['CNAME']),
         new HtmlWebpackPlugin({
             template: './src/index.jade',
         }),
