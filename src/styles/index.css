@@ -71,47 +71,47 @@ td {
   padding: 0;
 }
 body {
-  background: #242424 url("https://dl.dropbox.com/u/4965/bg.jpg") repeat-x top left;
+  background: #242424;
   color: #fff;
   font-size: 1em;
   line-height: 1.5em;
-  font-family: 'Droid Sans', Helvetica, Verdana, sans-serif;
+  font-family:  Helvetica, Verdana, sans-serif;
 }
 h1 {
-  font-family: 'Arimo', Tahoma, Arial, Helvetica, Verdana, sans-serif;
-  font-size: 4.4em;
+  font-family: Tahoma, Arial, Helvetica, Verdana, sans-serif;
+  font-size: 4.4rem;
   font-weight: normal;
   line-height: normal;
   text-shadow: 0 -1px 1px #222;
 }
 h2 {
-  font-size: 2.8em;
+  font-size: 2.8rem;
   font-weight: bold;
-  padding-bottom: 18px;
+  padding-bottom: 1rem;
   color: #717032;
 }
 h3 {
-  font-size: 1.6em;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin: 5px 0;
+  margin: 0.27rem 0;
   color: #717032;
 }
-a,
-a:link,
-a:visited {
+#main a,
+#main a:link,
+#main a:visited {
   outline-color: -moz-use-text-color;
   outline-style: none;
   outline-width: 0;
   text-decoration: underline;
   color: #00b7ff;
 }
-a:hover {
+#main a:hover {
   text-decoration: underline;
   color: #858b0f;
 }
 #container {
-  padding: 10px auto;
-  margin: 0.6em auto;
+  padding: 1.1rem auto;
+  margin: 0.6rem auto;
 }
 #header {
   color: #fff;
@@ -125,27 +125,19 @@ a:hover {
 #main {
   text-align: left;
   color: #666;
-  padding: 10px 0;
+  padding: 0.5rem 0;
 }
 #main p {
-  padding: 0 0 0.5em 0;
-}
-#main_left {
-  font-size: 1.3em;
-  line-height: normal;
-}
-#main_right {
-  padding-left: 20px;
-  border-left: 1px dashed #a2a39e;
+  padding: 0 0 0.5rem 0;
 }
 #footer {
-  padding: 20px;
+  padding: 1.1rem;
   color: #555242;
   background: rgba(205,216,2,0.8);
   border-top: 3px #ccc solid;
 }
 #copyright {
-  margin: 10px auto 0px auto;
+  margin: 1.1rem auto 1.1rem auto;
   display: block;
 }
 #copyright p {
@@ -159,56 +151,10 @@ a:hover {
 #copyright a:hover {
   text-decoration: underline;
 }
-.tweet .tweet_list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.tweet .tweet_list li {
-  overflow: auto;
-  padding-bottom: 0.5em;
-}
-.tweet .tweet_list li a {
-  color: #1883de;
-  text-decoration: none;
-}
-.column {
-  margin: 0 10px;
-  overflow: hidden;
-  float: left;
-  display: inline;
-}
-.row {
-  width: 960px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-.row .row {
-  margin: 0 -10px;
-  width: auto;
-  display: inline-block;
-}
-.grid_12 {
-  width: 940px;
-}
-.grid_8 {
-  width: 620px;
-}
-.grid_4 {
-  width: 300px;
-}
-.row_12,
-.row_4_8 {
-  display: block;
-}
 .small {
   font-size: large;
 }
-.right {
-  float: right;
-  text-align: right;
-}
-a.button {
+.button {
   background: #222;
   display: inline-block;
   padding: 5px 10px 6px;
