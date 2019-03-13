@@ -1,12 +1,13 @@
-'use strict';
 import 'babel-polyfill';
 
 import '../styles/index.css';
+import ready from './ready';
 import resetLinks from './resetLinks';
+
 
 const textCallback = (element, text) => {
   window.setTimeout(resetLinks, 2000, element, text);
-return 'Loading...';
+  return element.innerText = 'Loading...';
 };
 
 const clickCallback = (event) => {
@@ -16,6 +17,8 @@ const clickCallback = (event) => {
 
 const clickButton = (element) => element.addEventListener('click', clickCallback);
 
-const buttons = document.querySelectorAll('a.button');
+ready(() => {
+  const buttons = document.querySelectorAll('a.button');
 
-[...buttons].forEach(clickButton);
+  [...buttons].forEach(clickButton);
+})
