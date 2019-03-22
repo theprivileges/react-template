@@ -1,204 +1,45 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-font,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
-  border: 0 none;
-  margin: 0;
-  outline-color: -moz-use-text-color;
-  outline-style: none;
-  outline-width: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+html {
+  font-family: sans-serif;
 }
-* {
-  margin: 0;
-  padding: 0;
-}
+
 body {
-  background: #242424;
-  color: #fff;
+  background: #fff;
+  color: #24292e;
   font-size: 1em;
-  line-height: 1.5em;
-  font-family:  Helvetica, Verdana, sans-serif;
+  line-height: 1.5;
+  font-family:  -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
-h1 {
-  font-family: Tahoma, Arial, Helvetica, Verdana, sans-serif;
+.wrapper {
+  width: 90%;
+  margin: 0 5%;
+}
+
+@media only screen and (min-width: 1140px) {
+  .wrapper {
+    width: 1026px;
+    margin: 0 auto;
+  }
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.title {
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Inconsolata, Courier, monospace;
   font-size: 4.4rem;
   font-weight: normal;
   line-height: normal;
   text-shadow: 0 -1px 1px #222;
 }
-h2 {
+
+.subtitle {
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Inconsolata, Courier, monospace;
   font-size: 2.8rem;
   font-weight: bold;
   padding-bottom: 1rem;
   color: #717032;
-}
-h3 {
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin: 0.27rem 0;
-  color: #717032;
-}
-#main a,
-#main a:link,
-#main a:visited {
-  outline-color: -moz-use-text-color;
-  outline-style: none;
-  outline-width: 0;
-  text-decoration: underline;
-  color: #00b7ff;
-}
-#main a:hover {
-  text-decoration: underline;
-  color: #858b0f;
-}
-#container {
-  padding: 1.1rem auto;
-  margin: 0.6rem auto;
-}
-#header {
-  color: #fff;
-  background: rgba(0,0,0,0.4);
-}
-#body {
-  margin: 0;
-  padding: 0;
-  background: #fff;
-}
-#main {
-  text-align: left;
-  color: #666;
-  padding: 0.5rem 0;
-}
-#main p {
-  padding: 0 0 0.5rem 0;
-}
-#footer {
-  padding: 1.1rem;
-  color: #555242;
-  background: rgba(205,216,2,0.8);
-  border-top: 3px #ccc solid;
-}
-#copyright {
-  margin: 1.1rem auto 1.1rem auto;
-  display: block;
-}
-#copyright p {
-  text-align: center;
-}
-#copyright a,
-#copyright a:link {
-  color: #fff;
-  text-decoration: none;
-}
-#copyright a:hover {
-  text-decoration: underline;
-}
-.small {
-  font-size: large;
-}
-.button {
-  background: #222;
-  display: inline-block;
-  padding: 5px 10px 6px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 2em;
-  line-height: 1em;
-  text-decoration: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 1px 3px #999;
-  -moz-box-shadow: 0 1px 3px #999;
-  box-shadow: 0 1px 3px #999;
-  text-shadow: 0 -1px 1px #222;
-  border-bottom: 1px solid #222;
-  position: relative;
-  cursor: pointer;
-  -moz-user-select: -moz-none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-.button:hover {
-  opacity: 0.8;
-  color: #fff;
-}
-.button:active {
-  border-bottom: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-.blue.button {
-  background-color: #1883de;
-}
-.green.button {
-  background-color: #858b0f;
-}
-.orange.button {
-  background-color: #a51812;
-}
-.red.button {
-  background-color: #8b0e08;
-}
-.black.button {
-  background-color: #000;
 }
