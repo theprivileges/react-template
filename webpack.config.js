@@ -5,8 +5,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (webpackEnv) => {
-  const isEnvDevelopment === webpackEnv.development;
-  const isEnvProduction === webpackEnv.production;
+  const isEnvDevelopment = webpackEnv === 'development';
+  const isEnvProduction = webpackEnv === 'production';
 
   return {
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
