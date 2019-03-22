@@ -45,20 +45,36 @@ module.exports = (webpackEnv) => {
             'css-loader'
           ]
         },
-        {
-          test: /\.jade$/,
-          use: {
-            loader: 'pug-loader'
-          }
-        }
       ]
     },
     plugins: [
       new CleanWebpackPlugin({}),
       new CopyPlugin(['CNAME']),
-      new HtmlWebpackPlugin({
-        template: './src/index.jade',
-      }),
+      new HtmlWebpackPlugin(
+        Object.assign(
+          {},
+          {
+            inject: true,
+            template: './src/index.html',
+          },
+          isEnvProduction
+            ? {
+                minify: {
+                  removeComments: true,
+                  collapseWhitespace: true,
+                  removeRedundantAttributes: true,
+                  useShortDoctype: true,
+                  removeEmptyAttributes: true,
+                  removeStyleLinkTypeAttributes: true,
+                  keepClosingSlash: true,
+                  minifyJS: true,
+                  minifyCSS: true,
+                  minifyURLs: true,
+                },
+              }
+            : undefined
+        )
+      ),
       new ScriptExtHtmlWebpackPlugin({
         defaultAttribute: 'async'
       })
@@ -66,6 +82,10 @@ module.exports = (webpackEnv) => {
     optimization: {
       minimize: isEnvProduction,
       runtimeChunk: 'single',
+      splitChunks: {
+        chunks: 'all',
+        name: false,
+      }
     }
   };
 }
