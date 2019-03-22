@@ -1,5 +1,3 @@
-import 'babel-polyfill';
-
 import '../styles/index.css';
 import ready from './ready';
 import resetLinks from './resetLinks';
