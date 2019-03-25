@@ -4,6 +4,8 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
+const appPublic = path.resolve(__dirname, 'docs');
+
 module.exports = (webpackEnv) => {
   const isEnvDevelopment = webpackEnv === 'development';
   const isEnvProduction = webpackEnv === 'production';
@@ -19,7 +21,7 @@ module.exports = (webpackEnv) => {
     output: {
       filename: '[name].bundle.js',
       chunkFilename: '[name].chunk.js',
-      path: path.resolve(__dirname, 'docs'),
+      path: appPublic,
     },
     module: {
       rules: [
@@ -86,6 +88,9 @@ module.exports = (webpackEnv) => {
         chunks: 'all',
         name: false,
       }
+    },
+    devServer: {
+      contentBase: appPublic,
     }
   };
 }
