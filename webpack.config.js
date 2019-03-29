@@ -17,7 +17,7 @@ module.exports = (webpackEnv) => {
       : isEnvDevelopment && 'development',
     bail: isEnvProduction,
     devtool: isEnvProduction
-      ? 'source-map'
+      ? 'nosources-source-map'
       : isEnvDevelopment && 'cheap-module-source-map',
     entry: {
       main: './src/scripts/index.js',
@@ -31,6 +31,7 @@ module.exports = (webpackEnv) => {
         : '[name].chunk.js',
       path: appPublic,
       pathinfo: isEnvDevelopment,
+      publicPath: '',
     },
     module: {
       strictExportPresence: true,

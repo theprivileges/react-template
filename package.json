@@ -8,8 +8,8 @@
     "scripts": {
         "start": "webpack-dev-server --open --mode development",
         "watch": "webpack --mode development --watch",
-        "build:dev": "webpack --mode development --display \"detailed\"",
-        "build": "webpack --mode production --display \"minimal\"",
+        "build:dev": "webpack --mode development --env \"development\" --display \"detailed\"",
+        "build": "webpack --mode production --env \"production\"",
         "format": "prettier-eslint \"src/**/*.js\""
     },
     "author": "Luiz Lopes <http://twitter.com/theprivileges>",
