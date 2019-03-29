@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const appPublic = path.resolve(__dirname, 'docs');
 
@@ -11,19 +12,28 @@ module.exports = (webpackEnv) => {
   const isEnvProduction = webpackEnv === 'production';
 
   return {
-    mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
+    mode: isEnvProduction
+      ? 'production'
+      : isEnvDevelopment && 'development',
     bail: isEnvProduction,
     devtool: isEnvProduction
-      ? 'source-map' : isEnvDevelopment && 'cheap-module-source-map',
+      ? 'source-map'
+      : isEnvDevelopment && 'cheap-module-source-map',
     entry: {
-      main: './src/scripts/index.js'
+      main: './src/scripts/index.js',
     },
     output: {
-      filename: '[name].bundle.js',
-      chunkFilename: '[name].chunk.js',
+      filename: isEnvProduction
+        ? '[name].[contenthash:8].bundle.js'
+        : '[name].bundle.js',
+      chunkFilename: isEnvProduction
+        ? '[name].[contenthash:8].chunk.js'
+        : '[name].chunk.js',
       path: appPublic,
+      pathinfo: isEnvDevelopment,
     },
     module: {
+      strictExportPresence: true,
       rules: [
         {
           enforce: 'pre',
@@ -42,10 +52,14 @@ module.exports = (webpackEnv) => {
         },
         {
           test: /\.css$/,
-          use:[
-            'style-loader',
-            'css-loader'
-          ]
+          use: [
+            isEnvDevelopment &&
+              'style-loader',
+            isEnvProduction && {
+              loader: MiniCssExtractPlugin.loader,
+            },
+            'css-loader',
+          ].filter(Boolean)
         },
       ]
     },
@@ -79,11 +93,20 @@ module.exports = (webpackEnv) => {
       ),
       new ScriptExtHtmlWebpackPlugin({
         defaultAttribute: 'async'
-      })
-    ],
+      }),
+      isEnvProduction &&
+        new MiniCssExtractPlugin({
+          filename: isEnvProduction
+            ? '[name].[contenthash:8].css'
+            : isEnvDevelopment && '[name].css',
+          chunkFilename: isEnvProduction
+            ? '[name].[contenthash:8].chunk.css'
+            : isEnvDevelopment && '[name].chunk.css',
+        })
+    ].filter(Boolean),
     optimization: {
       minimize: isEnvProduction,
-      runtimeChunk: 'single',
+      runtimeChunk: true,
       splitChunks: {
         chunks: 'all',
         name: false,
@@ -91,6 +114,7 @@ module.exports = (webpackEnv) => {
     },
     devServer: {
       contentBase: appPublic,
+      compress: true,
     }
   };
 }
