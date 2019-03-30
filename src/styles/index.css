@@ -1,8 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: sans-serif;
 }
 
 body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: #fff;
   color: #24292e;
   font-size: 1em;
@@ -41,5 +48,5 @@ body {
   font-size: 2.8rem;
   font-weight: bold;
   padding-bottom: 1rem;
-  color: #717032;
+  color: #666666;
 }
