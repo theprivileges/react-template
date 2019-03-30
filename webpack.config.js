@@ -20,7 +20,8 @@ module.exports = (webpackEnv) => {
       ? 'nosources-source-map'
       : isEnvDevelopment && 'cheap-module-source-map',
     entry: {
-      main: './src/scripts/index.js',
+      // main: './src/scripts/index.js',
+      index: './src/styles/index.css',
     },
     output: {
       filename: isEnvProduction
