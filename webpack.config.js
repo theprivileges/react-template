@@ -61,6 +61,16 @@ module.exports = (webpackEnv) => {
               loader: MiniCssExtractPlugin.loader,
             },
             'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: [
+                  require('postcss-preset-env')(),
+                  isEnvProduction && require('cssnano')(),
+                ].filter(Boolean)
+              }
+            },
           ].filter(Boolean)
         },
       ]
