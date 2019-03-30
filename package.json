@@ -6,7 +6,7 @@
         "node": "^10.0.0"
     },
     "scripts": {
-        "start": "webpack-dev-server --open --mode development",
+        "start": "webpack-dev-server --mode development --env \"development\"",
         "watch": "webpack --mode development --watch",
         "build:dev": "webpack --mode development --env \"development\" --display \"detailed\"",
         "build": "webpack --mode production --env \"production\"",

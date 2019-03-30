@@ -57,7 +57,7 @@ module.exports = (webpackEnv) => {
           use: [
             isEnvDevelopment &&
               'style-loader',
-            isEnvProduction && {
+            {
               loader: MiniCssExtractPlugin.loader,
             },
             'css-loader',
@@ -96,15 +96,20 @@ module.exports = (webpackEnv) => {
       new ScriptExtHtmlWebpackPlugin({
         defaultAttribute: 'async'
       }),
-      isEnvProduction &&
-        new MiniCssExtractPlugin({
-          filename: isEnvProduction
-            ? '[name].[contenthash:8].css'
-            : isEnvDevelopment && '[name].css',
-          chunkFilename: isEnvProduction
-            ? '[name].[contenthash:8].chunk.css'
-            : isEnvDevelopment && '[name].chunk.css',
-        })
+      new MiniCssExtractPlugin(
+        Object.assign(
+          {},
+          isEnvProduction
+          ? {
+            filename: '[name].[contenthash:8].css',
+            chunkFilename: '[name].[contenthash:8].chunk.css',
+            }
+          : {
+              filename: '[name].css',
+              chunkFilename: '[name].chunk.css',
+          }
+        )
+      )
     ].filter(Boolean),
     optimization: {
       minimize: isEnvProduction,
@@ -117,6 +122,10 @@ module.exports = (webpackEnv) => {
     devServer: {
       contentBase: appPublic,
       compress: true,
+      clientLogLevel: 'none',
+      publicPath: '/',
+      quiet: true,
+      overlay: true,
     }
   };
 }
