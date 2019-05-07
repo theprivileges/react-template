@@ -134,6 +134,7 @@ module.exports = (webpackEnv) => {
       compress: true,
       clientLogLevel: 'none',
       publicPath: '/',
+      hot: true,
       quiet: true,
       overlay: true,
     }
