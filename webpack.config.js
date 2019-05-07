@@ -77,7 +77,7 @@ module.exports = (webpackEnv) => {
     },
     plugins: [
       new CleanWebpackPlugin({}),
-      new CopyPlugin(['CNAME']),
+      new CopyPlugin(['./src/public']),
       new HtmlWebpackPlugin(
         Object.assign(
           {},
