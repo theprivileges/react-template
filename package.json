@@ -23,7 +23,7 @@
     "url": "git://github.com/theprivileges/wickeddeveloper.com.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
+    "@babel/core": "^7.6.3",
     "@babel/preset-env": "^7.6.2",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^2.0.0",
