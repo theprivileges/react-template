@@ -16,7 +16,8 @@
   "description": "My personal website",
   "homepage": "http://wickeddeveloper.com",
   "dependencies": {
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "gh-pages": "^2.1.1"
   },
   "repository": {
     "type": "git",
