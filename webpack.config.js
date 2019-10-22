@@ -3,18 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const appPublic = path.resolve(__dirname, 'docs');
 
-module.exports = (webpackEnv) => {
+module.exports = webpackEnv => {
   const isEnvDevelopment = webpackEnv === 'development';
   const isEnvProduction = webpackEnv === 'production';
 
   return {
-    mode: isEnvProduction
-      ? 'production'
-      : isEnvDevelopment && 'development',
+    mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     bail: isEnvProduction,
     devtool: isEnvProduction
       ? 'nosources-source-map'
@@ -42,21 +40,20 @@ module.exports = (webpackEnv) => {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'eslint-loader'
-          }
+            loader: 'eslint-loader',
+          },
         },
         {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader'
-          }
+            loader: 'babel-loader',
+          },
         },
         {
           test: /\.css$/,
           use: [
-            isEnvDevelopment &&
-              'style-loader',
+            isEnvDevelopment && 'style-loader',
             {
               loader: MiniCssExtractPlugin.loader,
             },
@@ -68,12 +65,12 @@ module.exports = (webpackEnv) => {
                 plugins: [
                   require('postcss-preset-env')(),
                   isEnvProduction && require('cssnano')(),
-                ].filter(Boolean)
-              }
+                ].filter(Boolean),
+              },
             },
-          ].filter(Boolean)
+          ].filter(Boolean),
         },
-      ]
+      ],
     },
     plugins: [
       new CleanWebpackPlugin({}),
@@ -100,26 +97,26 @@ module.exports = (webpackEnv) => {
                   minifyURLs: true,
                 },
               }
-            : undefined
-        )
+            : undefined,
+        ),
       ),
       new ScriptExtHtmlWebpackPlugin({
-        defaultAttribute: 'async'
+        defaultAttribute: 'async',
       }),
       new MiniCssExtractPlugin(
         Object.assign(
           {},
           isEnvProduction
-          ? {
-            filename: '[name].[contenthash:8].css',
-            chunkFilename: '[name].[contenthash:8].chunk.css',
-            }
-          : {
-              filename: '[name].css',
-              chunkFilename: '[name].chunk.css',
-          }
-        )
-      )
+            ? {
+                filename: '[name].[contenthash:8].css',
+                chunkFilename: '[name].[contenthash:8].chunk.css',
+              }
+            : {
+                filename: '[name].css',
+                chunkFilename: '[name].chunk.css',
+              },
+        ),
+      ),
     ].filter(Boolean),
     optimization: {
       minimize: isEnvProduction,
@@ -127,7 +124,7 @@ module.exports = (webpackEnv) => {
       splitChunks: {
         chunks: 'all',
         name: false,
-      }
+      },
     },
     devServer: {
       contentBase: appPublic,
@@ -136,6 +133,6 @@ module.exports = (webpackEnv) => {
       publicPath: '/',
       hot: true,
       overlay: true,
-    }
+    },
   };
-}
+};
