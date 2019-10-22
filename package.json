@@ -10,7 +10,9 @@
     "watch": "webpack --mode development --watch",
     "build:dev": "webpack --mode development --env \"development\" --display \"detailed\"",
     "build": "webpack --mode production --env \"production\"",
-    "format": "prettier-eslint \"src/**/*.js\""
+    "format": "prettier-eslint \"src/**/*.js\"",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d docs"
   },
   "author": "Luiz Lopes <http://twitter.com/theprivileges>",
   "description": "My personal website",
