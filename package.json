@@ -19,7 +19,7 @@
   "homepage": "http://wickeddeveloper.com",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "gh-pages": "^2.2.0",
+    "gh-pages": "^3.0.0",
     "package.json": "^2.0.1",
     "yarn.lock": "^0.0.1-security"
   },
